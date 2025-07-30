@@ -13,7 +13,8 @@ const app=express();
 app.use(cors({
     origin: [
         'http://localhost:5173', // local dev
-        'https://financify-five.vercel.app' // Vercel frontend
+        'https://financify-five.vercel.app', // Vercel frontend
+        'https://financify.vercel.app' // New Vercel frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
