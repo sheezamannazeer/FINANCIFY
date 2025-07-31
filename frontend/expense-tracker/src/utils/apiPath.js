@@ -2,8 +2,8 @@ export const BASE_URL = import.meta.env.VITE_API_URL || 'https://financify-xnc2.
 
 const API_PATHS = {
     AUTH: {
-        LOGIN: `${BASE_URL}/api/v1/auth/login`,
-        SIGNUP: `${BASE_URL}/api/v1/auth/register`,
+        LOGIN: '/api/v1/auth/login',
+        SIGNUP: '/api/v1/auth/register',
     },
     DASHBOARD:{
         GET_DATA:"/api/v1/dashboard",
