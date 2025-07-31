@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.VITE_API_URL || 'https://financify-backend.onrender.com';
+export const BASE_URL = import.meta.env.VITE_API_URL || 'https://financify-xnc2.onrender.com';
 
 const API_PATHS = {
     AUTH: {
