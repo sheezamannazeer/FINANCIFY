@@ -18,6 +18,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Login form submitted');
     let valid = true;
     setEmailError('');
     setPasswordError('');
@@ -31,11 +32,16 @@ const Login = () => {
       valid = false;
     }
     if (!valid) return;
+    
+    console.log('Making API call to:', API_PATHS.AUTH.LOGIN);
+    console.log('With data:', { email, password });
+    
     try {
       const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
         email,
         password,
       });
+      console.log('API response:', response.data);
       const { token, user } = response.data;
       if (token) {
         localStorage.setItem('token', token);
@@ -43,6 +49,7 @@ const Login = () => {
         navigate('/dashboard');
       }
     } catch (error) {
+      console.error('Login error:', error);
       if (error.response && error.response.data.message) {
         setError(error.response.data.message);
       } else {
