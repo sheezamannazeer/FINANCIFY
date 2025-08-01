@@ -18,7 +18,8 @@ app.use(cors({
         'https://financify-frontend.vercel.app', // Additional Vercel frontend
         'https://financify-xnc2.vercel.app', // Your current Vercel frontend
         'https://financify-juectqvqw-sheezamannazeers-projects.vercel.app', // Your actual frontend
-        'https://expense-tracker-8u6u0vo2h-sheezamannazeers-projects.vercel.app' // New deployed frontend
+        'https://expense-tracker-8u6u0vo2h-sheezamannazeers-projects.vercel.app', // New deployed frontend
+        'https://expense-tracker-244jqizkp-sheezamannazeers-projects.vercel.app' // Production frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
