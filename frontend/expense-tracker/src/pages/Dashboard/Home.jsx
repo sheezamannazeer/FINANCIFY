@@ -26,9 +26,13 @@ const Home = () => {
       setLoading(true);
       setError('');
       try {
+        console.log('Fetching dashboard data...');
+        console.log('Token in localStorage:', localStorage.getItem('token'));
         const res = await axiosInstance.get(API_PATHS.DASHBOARD.GET_DATA);
+        console.log('Dashboard response:', res.data);
         setDashboard(res.data);
       } catch (err) {
+        console.error('Dashboard error:', err);
         setError('Failed to load dashboard data.');
       } finally {
         setLoading(false);
