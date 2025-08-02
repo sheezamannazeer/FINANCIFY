@@ -13,6 +13,7 @@ const app=express();
 app.use(cors({
     origin: [
         'http://localhost:5173', // local dev
+        'http://localhost:5174', // local dev (alternative port)
         'https://financify-five.vercel.app', // Vercel frontend
         'https://financify.vercel.app', // New Vercel frontend
         'https://financify-frontend.vercel.app', // Additional Vercel frontend

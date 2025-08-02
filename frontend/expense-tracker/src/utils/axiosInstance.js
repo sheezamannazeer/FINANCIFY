@@ -3,7 +3,7 @@ import {BASE_URL} from './apiPath';
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
-    timeout: 10000, // 10 seconds timeout
+    timeout: 30000, // 30 seconds timeout for Render's free tier
     headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -39,9 +39,11 @@ const axiosInstance = axios.create({
                 }
                 else if (error.response.status === 500) {
                     console.error('Server error - please try again later');
-                } else if (error.code === 'ECONNABORTED') {
-                    console.error('Request timed out - please try again later');
                 }
+            } else if (error.code === 'ECONNABORTED') {
+                console.error('Request timed out - please try again later');
+            } else if (error.code === 'NETWORK_ERROR') {
+                console.error('Network error - please check your connection');
             }
             return Promise.reject(error);
         }
